@@ -3,6 +3,9 @@
 Backend end Runs on
 [Port 8080] http://localhost:8080/
 
+# Website link, if you wish not to compile (docker, springboot/react)
+http://98.92.104.141:5173/
+
 # For Unit Testing
 - MacOS (cd to backend folder):
 ./mvnw clean package -DskipTests  
