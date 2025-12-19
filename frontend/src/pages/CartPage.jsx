@@ -23,7 +23,7 @@ const CartPage = () => {
 
         // USER MODE
         try {
-            const res = await fetch(`http://localhost:8080/api/cart?userId=${user.accountId}`);
+            const res = await fetch(`http://98.92.104.141:8080/api/cart?userId=${user.accountId}`);
             if (res.ok) {
                 const data = await res.json();
                 setCart(data);
@@ -65,7 +65,7 @@ const CartPage = () => {
 
         // User update
         try {
-            const res = await fetch(`http://localhost:8080/api/cart/update?userId=${user.accountId}`, {
+            const res = await fetch(`http://98.92.104.141:8080/api/cart/update?userId=${user.accountId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ cartItemId: cartItemId, quantity: parseInt(newQty) })
@@ -97,7 +97,7 @@ const CartPage = () => {
             return;
         }
 
-        await fetch(`http://localhost:8080/api/cart/remove/${itemId}?userId=${user.accountId}`, {
+        await fetch(`http://98.92.104.141:8080/api/cart/remove/${itemId}?userId=${user.accountId}`, {
             method: 'DELETE'
         });
         fetchCart();

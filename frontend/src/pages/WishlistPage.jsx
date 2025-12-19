@@ -23,7 +23,7 @@ const WishlistPage = () => {
 
             try {
                 const bookPromises = guestWishlist.map(bookId =>
-                    fetch(`http://localhost:8080/api/books/${bookId}`).then(res => res.json())
+                    fetch(`http://98.92.104.141:8080/api/books/${bookId}`).then(res => res.json())
                 );
                 const books = await Promise.all(bookPromises);
                 
@@ -43,7 +43,7 @@ const WishlistPage = () => {
 
         // user
         try {
-            const res = await fetch(`http://localhost:8080/api/wishlist?userId=${user.accountId}`);
+            const res = await fetch(`http://98.92.104.141:8080/api/wishlist?userId=${user.accountId}`);
             if (res.ok) {
                 const data = await res.json();
                 setWishlist({ items: data });
@@ -68,7 +68,7 @@ const WishlistPage = () => {
         // user
         try {
             const res = await fetch(
-                `http://localhost:8080/api/wishlist/remove?userId=${user.accountId}&bookId=${bookId}`,
+                `http://98.92.104.141:8080/api/wishlist/remove?userId=${user.accountId}&bookId=${bookId}`,
                 { method: 'DELETE' }
             );
             if (res.ok) {
@@ -125,7 +125,7 @@ const WishlistPage = () => {
 
         // user
         try {
-            const res = await fetch(`http://localhost:8080/api/cart/add?userId=${user.accountId}`, {
+            const res = await fetch(`http://98.92.104.141:8080/api/cart/add?userId=${user.accountId}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ bookId: book.bookId, quantity: quantity })

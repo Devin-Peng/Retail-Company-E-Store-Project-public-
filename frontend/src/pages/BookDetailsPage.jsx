@@ -22,7 +22,7 @@ const BookDetailsPage = () => {
 
     const fetchBook = async () => {
         try {
-            const res = await fetch(`http://localhost:8080/api/books/${id}`);
+            const res = await fetch(`http://98.92.104.141:8080/api/books/${id}`);
             if (res.ok) {
                 const data = await res.json();
                 setBook(data);
@@ -35,7 +35,7 @@ const BookDetailsPage = () => {
 
     const fetchReviews = async () => {
         try {
-            const res = await fetch(`http://localhost:8080/api/reviews/book/${id}`);
+            const res = await fetch(`http://98.92.104.141:8080/api/reviews/book/${id}`);
             if (res.ok) {
                 const data = await res.json();
                 setReviews(data);
@@ -78,7 +78,7 @@ const BookDetailsPage = () => {
         }
 
         try {
-            const res = await fetch(`http://localhost:8080/api/cart/add?userId=${user.accountId}`, {
+            const res = await fetch(`http://98.92.104.141:8080/api/cart/add?userId=${user.accountId}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ bookId: book.bookId, quantity: quantity })
@@ -106,7 +106,7 @@ const BookDetailsPage = () => {
         }
 
         try {
-            const res = await fetch(`http://localhost:8080/api/reviews/add`, {
+            const res = await fetch(`http://98.92.104.141:8080/api/reviews/add`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -136,7 +136,7 @@ const BookDetailsPage = () => {
 
         try {
             const res = await fetch(
-                `http://localhost:8080/api/reviews/${reviewId}?userId=${user.accountId}`,
+                `http://98.92.104.141:8080/api/reviews/${reviewId}?userId=${user.accountId}`,
                 { method: "DELETE" }
             );
 

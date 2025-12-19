@@ -43,7 +43,7 @@ const CheckoutPage = () => {
         // We don't process the card number in this dummy checkout
         
         try {
-            const res = await fetch(`http://localhost:8080/api/orders/checkout?userId=${user.accountId}`, {
+            const res = await fetch(`http://98.92.104.141:8080/api/orders/checkout?userId=${user.accountId}`, {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             });

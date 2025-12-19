@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api/books";
+const API_URL = "http://98.92.104.141:8080/api/books";
 
 export const fetchAllBooks = async () => {
     try {
@@ -11,4 +11,4 @@ export const fetchAllBooks = async () => {
         console.error("Error fetching books:", error);
         return [];
     }
-};
+}

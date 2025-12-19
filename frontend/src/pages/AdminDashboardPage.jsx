@@ -27,11 +27,11 @@ const AdminDashboard = () => {
     // Fetches data
     const fetchData = async () => {
         const [ord, bk, usr,] = await Promise.all([
-            fetch('http://localhost:8080/api/admin/orders').then(r => r.json()),
-            fetch('http://localhost:8080/api/books').then(r => r.json()),
-            fetch('http://localhost:8080/api/accounts').then(r => r.json()),
-            fetch('http://localhost:8080/api/categories').then(r => r.json()),
-            fetch('http://localhost:8080/api/publishers').then(r => r.json())
+            fetch('http://98.92.104.141:8080/api/admin/orders').then(r => r.json()),
+            fetch('http://98.92.104.141:8080/api/books').then(r => r.json()),
+            fetch('http://98.92.104.141:8080/api/accounts').then(r => r.json()),
+            fetch('http://98.92.104.141:8080/api/categories').then(r => r.json()),
+            fetch('http://98.92.104.141:8080/api/publishers').then(r => r.json())
         ]);
         setOrders(ord); setBooks(bk); setUsers(usr);
     };
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
     };
 
     const updateBookAPI = async (book) => {
-        await fetch(`http://localhost:8080/api/admin/books/${book.bookId}`, {
+        await fetch(`http://98.92.104.141:8080/api/admin/books/${book.bookId}`, {
             method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(book)
         });
         fetchData();
@@ -73,7 +73,7 @@ const AdminDashboard = () => {
 
     const handleDeleteBook = async (id) => {
         if(confirm("Delete book completely?")) {
-            await fetch(`http://localhost:8080/api/books/${id}`, { method: 'DELETE' });
+            await fetch(`http://98.92.104.141:8080/api/books/${id}`, { method: 'DELETE' });
             fetchData();
         }
     };
@@ -84,7 +84,7 @@ const AdminDashboard = () => {
     };
 
     const saveUser = async (userId) => {
-        await fetch(`http://localhost:8080/api/accounts/${userId}`, {
+        await fetch(`http://98.92.104.141:8080/api/accounts/${userId}`, {
             method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(editFormData)
         });
         setEditingUserId(null); fetchData();

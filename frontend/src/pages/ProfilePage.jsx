@@ -27,14 +27,14 @@ const ProfilePage = () => {
             creditCard: user.creditCard || '' // Load existing card
         });
 
-        fetch(`http://localhost:8080/api/orders?userId=${user.accountId}`)
+        fetch(`http://98.92.104.141:8080/api/orders?userId=${user.accountId}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, []);
 
     const handleUpdate = async () => {
         try {
-            const res = await fetch(`http://localhost:8080/api/accounts/${user.accountId}`, {
+            const res = await fetch(`http://98.92.104.141:8080/api/accounts/${user.accountId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

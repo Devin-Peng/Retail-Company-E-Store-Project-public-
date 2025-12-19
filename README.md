@@ -37,6 +37,9 @@ docker-compose up --build
 - Docker desktop installation is needed
 - SQL data can be found at backend/src/main/resources/data.sql (DML)
 - SQL Script can be found at sql.txt in project root (DDL)
+- AWS password is private since we don't want to share AWS password on public repository. So we zipped and submitted
+- You don't need SQL scripts since AWS and springboot handles it 
+- AWS connected to our project through application properties
 
 # Also Look at curl.txt for curl commands
 By design OrderService test (1 out of 9 test) may fail due to 10 percent failure rate (that was built in), as specified by the handout
@@ -44,3 +47,9 @@ By design OrderService test (1 out of 9 test) may fail due to 10 percent failure
 # Admin Username and password
 admin@test.com
 adminpass
+
+# Github public version (ZIP is private with AWS)
+https://github.com/Devin-Peng/Retail-Company-E-Store-Project-public-
+
+# LINK TO PUBLIC AWS 
+http://98.92.104.141:5173

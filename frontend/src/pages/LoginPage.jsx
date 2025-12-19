@@ -11,7 +11,7 @@ const LoginPage = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:8080/api/accounts/login', {
+            const res = await fetch('http://98.92.104.141:8080/api/accounts/login', {
                 method: 'POST', headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
             });
@@ -23,7 +23,7 @@ const LoginPage = () => {
                 // Merge Guest Cart
                 const guestCart = JSON.parse(localStorage.getItem('guestCart') || "[]");
                 if (guestCart.length > 0) {
-                    await fetch(`http://localhost:8080/api/cart/merge?userId=${data.accountId}`, {
+                    await fetch(`http://98.92.104.141:8080/api/cart/merge?userId=${data.accountId}`, {
                         method: 'POST', headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(guestCart.map(i => ({ bookId: i.bookId, quantity: i.quantity })))
                     });

@@ -25,7 +25,7 @@ const CatalogPage = () => {
 
     const loadWishlist = () => {
         if (user) {
-            fetch(`http://localhost:8080/api/wishlist?userId=${user.accountId}`)
+            fetch(`http://98.92.104.141:8080/api/wishlist?userId=${user.accountId}`)
             .then(res => res.json())
             .then(data => {
                 const bookIds = new Set(data.map(item => item.bookId));
@@ -39,7 +39,7 @@ const CatalogPage = () => {
     };
 
     const fetchCategories = async () => {
-        const res = await fetch("http://localhost:8080/api/categories");
+        const res = await fetch("http://98.92.104.141:8080/api/categories");
         if (res.ok) setCategories(await res.json());
     };
 
@@ -62,7 +62,7 @@ const CatalogPage = () => {
 
     try {
         if (isInWishlist) {
-        const res = await fetch(`http://localhost:8080/api/wishlist/remove?userId=${user.accountId}&bookId=${bookId}`, {
+        const res = await fetch(`http://98.92.104.141:8080/api/wishlist/remove?userId=${user.accountId}&bookId=${bookId}`, {
             method: "DELETE"
         });
         if (res.ok) {
@@ -71,7 +71,7 @@ const CatalogPage = () => {
             setWishlist(newWishlist);
         }
         } else {
-        const res = await fetch(`http://localhost:8080/api/wishlist/add?userId=${user.accountId}`, {
+        const res = await fetch(`http://98.92.104.141:8080/api/wishlist/add?userId=${user.accountId}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ bookId })
@@ -95,10 +95,10 @@ const CatalogPage = () => {
 
         if (categoryId === "all") {
             // URL: /api/books?sortBy=price&dir=asc
-            url = `http://localhost:8080/api/books?sortBy=${sortBy}&dir=${dir}`;
+            url = `http://98.92.104.141:8080/api/books?sortBy=${sortBy}&dir=${dir}`;
         } else {
             // URL: /api/books/category/1?sortBy=price&dir=asc
-            url = `http://localhost:8080/api/books/category/${categoryId}?sortBy=${sortBy}&dir=${dir}`;
+            url = `http://98.92.104.141:8080/api/books/category/${categoryId}?sortBy=${sortBy}&dir=${dir}`;
         }
 
         try {
@@ -114,7 +114,7 @@ const CatalogPage = () => {
     const handleSearch = (e) => {
         e.preventDefault();
        
-        fetch(`http://localhost:8080/api/books/search?keyword=${searchQuery}`)
+        fetch(`http://98.92.104.141:8080/api/books/search?keyword=${searchQuery}`)
             .then(res => res.json())
             .then(data => setBooks(data));
         
@@ -154,7 +154,7 @@ const CatalogPage = () => {
 
         // Logged in mode
         try {
-            const res = await fetch(`http://localhost:8080/api/cart/add?userId=${user.accountId}`, {
+            const res = await fetch(`http://98.92.104.141:8080/api/cart/add?userId=${user.accountId}`, {
                 method: "POST", headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ bookId: bookId, quantity: quantity })
             });

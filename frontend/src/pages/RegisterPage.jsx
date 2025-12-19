@@ -29,7 +29,7 @@ const RegisterPage = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:8080/api/accounts/register', {
+            const response = await fetch('http://98.92.104.141:8080/api/accounts/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
