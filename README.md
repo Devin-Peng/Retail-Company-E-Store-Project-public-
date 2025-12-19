@@ -48,24 +48,27 @@ Install the libraries: npm install
 
 Start the website: npm run dev
 
-# How run Docker (it runs frontend and backend together)
+# Automatic Installation Guide: How run Docker (it runs frontend and backend together)
 Handles everything required to run server (SpringBoot, etc)
-Prepare the backend: Go to the backend folder and run ./mvnw clean package -DskipTests (Mac) or mvnw.cmd clean package -DskipTests (Windows).
+- First of all, you need JDK 17 or 21 to run. If you have windows install it as an environmental variable from docs.oracle.com. Docker will not run without this since it needs the test in the backend to compile
+
+- Prepare the backend: First, add in the password for database in application properties. Then go to the backend folder and run ./mvnw clean package -DskipTests (Mac) or mvnw.cmd clean package -DskipTests (Windows).
+
 - You may need to fix the permission if the terminal says "permission denied" for ./mvnw, run chmod +x mvnw in the backend folder to allow it to run. On windows you can use the GUI.
 
 Start Docker: Run at the base of project: docker-compose up --build
 
-Docker handles the entire build process
+Docker handles the rest of the build process 
 
-## If code is modified
+## If code is modified (Why we need to run backend in automatic run is due to password change)
 mvn clean package -DskipTests, will clean and recompile the code.
 
 docker-compose up --build, use command after to run it.
 
 # For Unit Testing
-MacOS (cd to backend folder): ./mvnw clean package -DskipTests ./mvnw test
+MacOS (cd to backend folder): ./mvnw test
 
-Windows (cd to backend folder): mvnw.cmd clean package -DskipTests mvnw.cmd test
+Windows (cd to backend folder): mvnw.cmd test
 
 # AWS configuration
 We used Amazon RDS (Relational Database Service) for mySQL database.
