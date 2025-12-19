@@ -22,7 +22,6 @@ This project uses Maven to download libraries.
 
 No install needed: We included a Maven Wrapper (mvnw) in the folder.
 
-Permission Fix (Mac Only): If the terminal says "permission denied" for ./mvnw, run chmod +x mvnw in the backend folder to allow it to run.
 
 3. Install Node.js & npm
 The frontend uses React/Vite, which requires Node.js.
@@ -52,6 +51,7 @@ Start the website: npm run dev
 # How run Docker (it runs frontend and backend together)
 Handles everything required to run server (SpringBoot, etc)
 Prepare the backend: Go to the backend folder and run ./mvnw clean package -DskipTests (Mac) or mvnw.cmd clean package -DskipTests (Windows).
+- You may need to fix the permission if the terminal says "permission denied" for ./mvnw, run chmod +x mvnw in the backend folder to allow it to run. On windows you can use the GUI.
 
 Start Docker: Run at the base of project: docker-compose up --build
 
