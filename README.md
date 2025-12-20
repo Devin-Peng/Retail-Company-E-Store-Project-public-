@@ -10,12 +10,12 @@ http://98.92.104.141:5173/
 # Manual Installation Guide (The Long Way)
 If we aren't using Docker, we need to manually install these tools to run the project.
 
-1. Install Java JDK 17
+1. Install Java JDK 21
 Spring Boot needs the Java Development Kit (JDK) to run the backend code.
 
-What to get: Download and install JDK 17 (Amazon Corretto or Oracle).
+What to get: Download and install JDK 21 (Amazon Corretto or Oracle).
 
-Verify it works: Open the terminal and type java -version. We should see "17" in the output.
+Verify it works: Open the terminal and type java -version. We should see "21" in the output.
 
 2. Maven (Already included)
 This project uses Maven to download libraries.
@@ -39,7 +39,7 @@ MacOS: ./mvnw spring-boot:run
 
 Windows: mvnw.cmd spring-boot:run
 
-Java JDK 17+
+Java JDK 21+
 
 # How to run React/Vite Frontend (Manual)
 Open a new second terminal window and go into the frontend folder: cd frontend
