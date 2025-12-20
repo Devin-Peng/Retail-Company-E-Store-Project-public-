@@ -109,6 +109,8 @@ Password: adminpass
 
 - Evaluation: For grading purposes, please refer to the local environment instructions provided above to run and test the full-stack functionality.
 
+- The code for the public version is kept in a branch
+
 # Github public version is on branch Public-version at 
 https://github.com/Devin-Peng/Retail-Company-E-Store-Project-public-/tree/Public-version
 
