@@ -100,6 +100,15 @@ Username: admin@test.com
 
 Password: adminpass
 
+# Note to TA about running the public version of AWS
+- The configuration files for the AWS EC2 and RDS environments have been intentionally excluded from this public repository to maintain the security and privacy of the cloud infrastructure.
+
+- Local Execution: This repository is optimized for local execution via Docker Desktop or manual setup using JDK 17 and Node.js.
+
+- Cloud Privacy: All cloud-specific credentials, Security Group configurations, and EC2 instance management details are kept private.
+
+- Evaluation: For grading purposes, please refer to the local environment instructions provided above to run and test the full-stack functionality.
+
 # Github public version is on branch Public-version at 
 https://github.com/Devin-Peng/Retail-Company-E-Store-Project-public-/tree/Public-version
 
