@@ -50,7 +50,7 @@ Start the website: npm run dev
 
 # Automatic Installation Guide: How run Docker (it runs frontend and backend together)
 Handles everything required to run server (SpringBoot, etc)
-- First of all, you need JDK 17 or 21 to run. If you have windows install it as an environmental variable from docs.oracle.com. Docker will not run without this since it needs the test in the backend to compile
+- First of all, you need JDK 21+ to run. If you have windows install it as an environmental variable from docs.oracle.com. Docker will not run without this since it needs the test in the backend to compile
 
 - Prepare the backend: First, add in the password for database in application properties. Then go to the backend folder and run ./mvnw clean package -DskipTests (Mac) or mvnw.cmd clean package -DskipTests (Windows).
 
